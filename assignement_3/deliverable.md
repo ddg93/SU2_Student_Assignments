@@ -15,7 +15,8 @@ This problem is solved using a RANS approach with teh SST turbulence model.
 #### Homogeneous unsteady wall temperature on the heated flat plate: 
  - WallTemp = 293.0 + 57.0 * sin(2*pi*time)
 
-## Results
+### Results
+
 At the initial time-step, the thermal boundary layer has not yet developed, as the plate and the surrounding fluid are in a near-uniform temperature configuration.
 
 ![Temperature fields at the instant t=0](T0.png)
@@ -29,3 +30,7 @@ The thermal boundary layer is clearly visible when we plot the temperature profi
 
 ![Temperature profile along the wall-normal coordinate at the centre of the flat plate, at the instant t=9](temperature_profile.png)
 
+
+### Convergence
+The metrics convergence is observed in the following image.
+![Metric convergence during the simulation](history.png)

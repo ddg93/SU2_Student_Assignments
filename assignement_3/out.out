@@ -1,0 +1,419 @@
+WARNING: Setting WINDOW_START_ITER = RESTART_ITER for meaningful running average.
+
+Parsing config file for zone 0
+WARNING: Setting WINDOW_START_ITER = RESTART_ITER for meaningful running average.
+
+----------------- Physical Case Definition ( Zone 0 ) -------------------
+Compressible RANS equations.
+Turbulence model: Menter's k-omega SST-2003m with no production modification
+using default hard coded lower limit clipping.
+Hybrid RANS/LES: No Hybrid RANS/LES
+Mach number: 0.03059.
+Angle of attack (AoA): 0 deg, and angle of sideslip (AoS): 0 deg.
+Reynolds number: 24407.3. Reference length 0.035.
+No restart solution, use the values at infinity (freestream).
+Dimensional simulation.
+The reference area is 0.035 m^2.
+The semi-span will be computed using the max y(3D) value.
+The reference length is 0.035 m.
+Reference origin for moment evaluation is (-0.0028, 0, 0).
+Surface(s) where the force coefficients are evaluated: plate.
+
+Surface(s) plotted in the output file: plate.
+Surface(s) that are customizable in Python: plate.
+Input mesh file name: 2D_FlatPlate_Rounded.su2
+
+--------------- Space Numerical Integration ( Zone 0 ) ------------------
+Jameson-Schmidt-Turkel scheme (2nd order in space) for the flow inviscid terms.
+JST viscous coefficients (2nd & 4th): 0.5, 0.02.
+The method includes a grid stretching correction (p = 0.3).
+Scalar upwind solver for the turbulence model.
+First order integration in space.
+Average of gradients with correction (viscous flow terms).
+Average of gradients with correction (viscous turbulence terms).
+Gradient for upwind reconstruction: inverse-distance weighted Least-Squares.
+Gradient for viscous and source terms: inverse-distance weighted Least-Squares.
+
+--------------- Time Numerical Integration  ( Zone 0 ) ------------------
+Unsteady simulation, dual time stepping strategy (second order in time).
+Unsteady time step provided by the user (s): 0.003.
+Euler implicit method for the flow equations.
+FGMRES is used for solving the linear system.
+Using a ILU(0) preconditioning.
+Convergence criteria of the linear solver: 1e-06.
+Max number of linear iterations: 10.
+W Multigrid Cycle, with 3 multigrid levels.
+Damping factor for the residual restriction: 0.75.
+Damping factor for the correction prolongation: 0.75.
+No CFL adaptation.
++-------------------------------------------+
+|  MG Level| Presmooth|PostSmooth|CorrectSmo|
++-------------------------------------------+
+|         0|         1|         0|         0|
+|         1|         2|         0|         0|
+|         2|         3|         0|         0|
+|         3|         3|         0|         0|
++-------------------------------------------+
+Courant-Friedrichs-Lewy number:        7
+Euler implicit time integration for the turbulence model.
+
+------------------ Convergence Criteria  ( Zone 0 ) ---------------------
+Maximum number of solver subiterations: 10.
+Maximum number of physical time-steps: 10.
+Begin convergence monitoring at iteration 4.
+Residual minimum value: 1e-10.
+Cauchy series min. value: 1e-06.
+Number of Cauchy elements: 10.
+Begin windowed time average at iteration 0.
+
+-------------------- Output Information ( Zone 0 ) ----------------------
+File writing frequency: 
++------------------------------------+
+|                     File| Frequency|
++------------------------------------+
+|                  RESTART|         3|
+|                 PARAVIEW|         3|
+|         SURFACE_PARAVIEW|         3|
++------------------------------------+
+Writing the convergence history file every 0 inner iterations.
+Writing the convergence history file every 1 time iterations.
+Writing the screen convergence history every 1 inner iterations.
+Writing the screen convergence history every 1 time iterations.
+The tabular file format is CSV (.csv).
+Convergence history file name: history.
+Forces breakdown file name: forces_breakdown.dat.
+Surface file name: surface_flow.
+Volume file name: flow.
+Restart file name: restart_flow.
+
+------------- Config File Boundary Information ( Zone 0 ) ---------------
++-----------------------------------------------------------------------+
+|                        Marker Type|                        Marker Name|
++-----------------------------------------------------------------------+
+|                          Far-field|                           farfield|
++-----------------------------------------------------------------------+
+|                    Isothermal wall|                              plate|
++-----------------------------------------------------------------------+
+
+-------------------- Output Preprocessing ( Zone 0 ) --------------------
+
+WARNING: SURFACE_PRESSURE_DROP can only be computed for at least 2 surfaces (outlet, inlet, ...)
+
+Screen output fields: TIME_ITER, INNER_ITER, RMS_DENSITY, RMS_TKE, RMS_DISSIPATION, LIFT, DRAG
+History output group(s): ITER, CUR_TIME, RMS_RES
+Convergence field(s): RMS_DENSITY
+Warning: No (valid) fields chosen for time convergence monitoring. Time convergence monitoring inactive.
+Volume output fields: COORDINATES, SOLUTION, PRIMITIVE
+
+------------------- Geometry Preprocessing ( Zone 0 ) -------------------
+Two dimensional problem.
+16800 grid points.
+16600 volume elements.
+2 surface markers.
+200 boundary elements in index 0 (Marker = farfield).
+200 boundary elements in index 1 (Marker = plate).
+16600 quadrilaterals.
+Setting point connectivity.
+Renumbering points (Reverse Cuthill McKee Ordering).
+Recomputing point connectivity.
+Setting element connectivity.
+Checking the numerical grid orientation.
+There has been a re-orientation of 16600 QUADRILATERAL volume elements.
+There has been a re-orientation of 200 LINE surface elements.
+Identifying edges and vertices.
+Setting the control volume structure.
+Area of the computational grid: 9.61891.
+Searching for the closest normal neighbors to the surfaces.
+Storing a mapping from global to local point index.
+Compute the surface curvature.
+Max K: 1333.34. Mean K: 223.863. Standard deviation K: 494.469.
+Checking for periodicity.
+Computing mesh quality statistics for the dual control volumes.
++--------------------------------------------------------------+
+|           Mesh Quality Metric|        Minimum|        Maximum|
++--------------------------------------------------------------+
+|    Orthogonality Angle (deg.)|        47.3961|             90|
+|     CV Face Area Aspect Ratio|        1.01967|        83.4697|
+|           CV Sub-Volume Ratio|              1|        3.24468|
++--------------------------------------------------------------+
+Setting the multigrid structure.
++-------------------------------------------+
+|  MG Level|       CVs|Aggl. Rate|       CFL|
++-------------------------------------------+
+|         0|     16800|    1/1.00|         7|
+|         1|      4200|       1/4|      5.25|
+|         2|      1050|       1/4|    3.9375|
+|         3|       274|    1/3.83|   3.01712|
++-------------------------------------------+
+Finding max control volume width.
+Wetted area = 0.0717037 m.
+Area projection in the x-plane = 0.00149999 m, y-plane = 0.034999 m.
+Max. coordinate in the x-direction = 0.0175 m, y-direction = 0.000749998 m.
+Min. coordinate in the x-direction = -0.0175 m, y-direction = -0.000749998 m.
+Computing wall distances.
+
+-------------------- Solver Preprocessing ( Zone 0 ) --------------------
+Viscous flow: Computing pressure using the ideal gas law
+based on the free-stream temperature and a density computed
+from the Reynolds number.
+Force coefficients computed using free-stream values.
+
+-- Models:
++------------------------------------------------------------------------------+
+|          Viscosity Model|        Conductivity Model|              Fluid Model|
++------------------------------------------------------------------------------+
+|               SUTHERLAND|          CONSTANT_PRANDTL|             STANDARD_AIR|
++------------------------------------------------------------------------------+
+-- Fluid properties:
++------------------------------------------------------------------------------+
+|                  Name|    Dim. value|    Ref. value|      Unit|Non-dim. value|
++------------------------------------------------------------------------------+
+|        Ref. Viscosity|     1.716e-05|             1|   N.s/m^2|     1.716e-05|
+|      Sutherland Temp.|        273.15|             1|         K|        273.15|
+|     Sutherland Const.|         110.4|             1|         K|         110.4|
++------------------------------------------------------------------------------+
+|        Prandtl (Lam.)|             -|             -|         -|          0.72|
+|       Prandtl (Turb.)|             -|             -|         -|           0.9|
++------------------------------------------------------------------------------+
+|          Gas Constant|       287.058|             1|  N.m/kg.K|       287.058|
+|      Spec. Heat Ratio|             -|             -|         -|           1.4|
++------------------------------------------------------------------------------+
+-- Initial and free-stream conditions:
++------------------------------------------------------------------------------+
+|                  Name|    Dim. value|    Ref. value|      Unit|Non-dim. value|
++------------------------------------------------------------------------------+
+|       Static Pressure|        101347|             1|        Pa|        101347|
+|               Density|       1.20435|             1|    kg/m^3|       1.20435|
+|           Temperature|        293.15|             1|         K|        293.15|
+|          Total Energy|        210433|             1|   m^2/s^2|        210433|
+|            Velocity-X|       10.4996|             1|       m/s|       10.4996|
+|            Velocity-Y|             0|             1|       m/s|             0|
+|    Velocity Magnitude|       10.4996|             1|       m/s|       10.4996|
++------------------------------------------------------------------------------+
+|             Viscosity|   1.81332e-05|             1|   N.s/m^2|   1.81332e-05|
+|          Conductivity|             -|             1|   W/m^2.K|             -|
+|     Turb. Kin. Energy|      0.413407|             1|   m^2/s^2|      0.413407|
+|     Spec. Dissipation|       2745.71|             1|       1/s|       2745.71|
++------------------------------------------------------------------------------+
+|           Mach Number|             -|             -|         -|       0.03059|
+|       Reynolds Number|             -|             -|         -|       24407.3|
++------------------------------------------------------------------------------+
+-- Unsteady conditions
++------------------------------------------------------------------------------+
+|                  Name|    Dim. value|    Ref. value|      Unit|Non-dim. value|
++------------------------------------------------------------------------------+
+|            Total Time|             1|             1|         s|             1|
+|             Time Step|         0.003|             1|         s|         0.003|
++------------------------------------------------------------------------------+
+Initialize Jacobian structure (Navier-Stokes). MG level: 0.
+Initialize Jacobian structure (SST model).
+Initialize Jacobian structure (Navier-Stokes). MG level: 1.
+Initialize Jacobian structure (Navier-Stokes). MG level: 2.
+Initialize Jacobian structure (Navier-Stokes). MG level: 3.
+
+------------------- Numerics Preprocessing ( Zone 0 ) -------------------
+
+----------------- Integration Preprocessing ( Zone 0 ) ------------------
+
+------------------- Iteration Preprocessing ( Zone 0 ) ------------------
+Euler/Navier-Stokes/RANS fluid iteration.
+----------------- Python Interface Preprocessing ( Zone 0 ) -----------------
+Setting customized boundary conditions for zone 0
+
+------------------------------ Begin Solver -----------------------------
+
+Updating boundary conditions.
+WARNING: SU2 was not compiled for an AVX-capable architecture. Performance could be better,
+         see https://su2code.github.io/docs_v7/Build-SU2-Linux-MacOS/#compiler-optimizations
+WARNING: SU2 was not compiled for an AVX-capable architecture. Performance could be better,
+         see https://su2code.github.io/docs_v7/Build-SU2-Linux-MacOS/#compiler-optimizations
+WARNING: SU2 was not compiled for an AVX-capable architecture. Performance could be better,
+         see https://su2code.github.io/docs_v7/Build-SU2-Linux-MacOS/#compiler-optimizations
+WARNING: SU2 was not compiled for an AVX-capable architecture. Performance could be better,
+         see https://su2code.github.io/docs_v7/Build-SU2-Linux-MacOS/#compiler-optimizations
++------------------------------------------------------------------------------------------+
+|   Time_Iter|  Inner_Iter|    rms[Rho]|      rms[k]|      rms[w]|          CL|          CD|
++------------------------------------------------------------------------------------------+
+|           0|           0|   -4.434325|   -0.699956|    3.086109|   -0.063816|    7.013865|
+|           0|           1|   -4.804849|   -0.824486|    3.262538|   -0.042437|    5.704565|
+|           0|           2|   -5.062097|   -0.941609|    3.242064|    0.004560|    3.034283|
+|           0|           3|   -5.045188|   -1.052219|    3.227335|    0.026644|    1.290097|
+|           0|           4|   -4.998333|   -1.156953|    3.216505|    0.023235|    0.614237|
+|           0|           5|   -5.053510|   -1.256291|    3.210307|    0.011765|    0.486977|
+|           0|           6|   -5.165833|   -1.350611|    3.208604|    0.003652|    0.499620|
+|           0|           7|   -5.266242|   -1.440233|    3.210687|    0.000842|    0.490449|
+|           0|           8|   -5.367505|   -1.525430|    3.206580|    0.000924|    0.441592|
+|           0|           9|   -5.476921|   -1.606447|    3.199858|    0.001391|    0.379175|
++-----------------------------------------------------------------------+
+|        File Writing Summary       |              Filename             |
++-----------------------------------------------------------------------+
+|SU2 binary restart                 |restart_flow_00000.dat             |
+|Paraview                           |flow_00000.vtu                     |
+|Paraview surface                   |surface_flow_00000.vtu             |
++-----------------------------------------------------------------------+
+Updating boundary conditions.
++------------------------------------------------------------------------------------------+
+|   Time_Iter|  Inner_Iter|    rms[Rho]|      rms[k]|      rms[w]|          CL|          CD|
++------------------------------------------------------------------------------------------+
+|           1|           0|   -5.536695|   -0.829216|    3.252514|    0.000657|    0.317427|
+|           1|           1|   -5.585836|   -0.940670|    3.215694|    0.000484|    0.281607|
+|           1|           2|   -5.675283|   -1.045989|    3.182542|    0.000111|    0.267369|
+|           1|           3|   -5.794763|   -1.145874|    3.151063|   -0.000371|    0.263960|
+|           1|           4|   -5.879183|   -1.240837|    3.119821|   -0.000638|    0.262048|
+|           1|           5|   -5.924687|   -1.331272|    3.087960|   -0.000607|    0.257122|
+|           1|           6|   -5.988837|   -1.417493|    3.055009|   -0.000411|    0.249041|
+|           1|           7|   -6.082712|   -1.499764|    3.020738|   -0.000210|    0.239804|
+|           1|           8|   -6.170884|   -1.578312|    2.985076|   -0.000088|    0.231473|
+|           1|           9|   -6.226635|   -1.653336|    2.948045|   -0.000049|    0.225129|
+Updating boundary conditions.
++------------------------------------------------------------------------------------------+
+|   Time_Iter|  Inner_Iter|    rms[Rho]|      rms[k]|      rms[w]|          CL|          CD|
++------------------------------------------------------------------------------------------+
+|           2|           0|   -6.125266|   -1.046391|    2.995172|    0.000598|    0.223405|
+|           2|           1|   -6.234306|   -1.145580|    2.939265|    0.000547|    0.221880|
+|           2|           2|   -6.266627|   -1.239912|    2.886582|    0.000190|    0.220175|
+|           2|           3|   -6.284921|   -1.329816|    2.835891|   -0.000100|    0.218187|
+|           2|           4|   -6.298856|   -1.415625|    2.786582|   -0.000215|    0.215939|
+|           2|           5|   -6.310946|   -1.497604|    2.738326|   -0.000207|    0.213521|
+|           2|           6|   -6.320080|   -1.575976|    2.690919|   -0.000149|    0.211050|
+|           2|           7|   -6.326050|   -1.650934|    2.644237|   -0.000085|    0.208630|
+|           2|           8|   -6.330304|   -1.722650|    2.598232|   -0.000033|    0.206322|
+|           2|           9|   -6.334590|   -1.791279|    2.552920|    0.000006|    0.204147|
++-----------------------------------------------------------------------+
+|        File Writing Summary       |              Filename             |
++-----------------------------------------------------------------------+
+|SU2 binary restart                 |restart_flow_00002.dat             |
++-----------------------------------------------------------------------+
+Updating boundary conditions.
++------------------------------------------------------------------------------------------+
+|   Time_Iter|  Inner_Iter|    rms[Rho]|      rms[k]|      rms[w]|          CL|          CD|
++------------------------------------------------------------------------------------------+
+|           3|           0|   -6.235429|   -1.262342|    2.674525|    0.000483|    0.202270|
+|           3|           1|   -6.245337|   -1.351788|    2.609054|    0.000589|    0.200412|
+|           3|           2|   -6.209068|   -1.437176|    2.548092|    0.000404|    0.198589|
+|           3|           3|   -6.192772|   -1.518776|    2.490828|    0.000179|    0.196802|
+|           3|           4|   -6.188593|   -1.596807|    2.436971|    0.000052|    0.195054|
+|           3|           5|   -6.188393|   -1.671457|    2.386419|    0.000030|    0.193351|
+|           3|           6|   -6.188107|   -1.742893|    2.339041|    0.000065|    0.191690|
+|           3|           7|   -6.187717|   -1.811263|    2.294669|    0.000113|    0.190071|
+|           3|           8|   -6.188489|   -1.876707|    2.253131|    0.000153|    0.188492|
+|           3|           9|   -6.191111|   -1.939353|    2.214277|    0.000182|    0.186955|
++-----------------------------------------------------------------------+
+|        File Writing Summary       |              Filename             |
++-----------------------------------------------------------------------+
+|SU2 binary restart                 |restart_flow_00003.dat             |
+|Paraview                           |flow_00003.vtu                     |
+|Paraview surface                   |surface_flow_00003.vtu             |
++-----------------------------------------------------------------------+
+Updating boundary conditions.
++------------------------------------------------------------------------------------------+
+|   Time_Iter|  Inner_Iter|    rms[Rho]|      rms[k]|      rms[w]|          CL|          CD|
++------------------------------------------------------------------------------------------+
+|           4|           0|   -6.149100|   -1.452865|    2.432640|    0.000630|    0.185570|
+|           4|           1|   -6.135930|   -1.534652|    2.367941|    0.000736|    0.184191|
+|           4|           2|   -6.105140|   -1.612862|    2.308489|    0.000559|    0.182829|
+|           4|           3|   -6.092044|   -1.687683|    2.253654|    0.000338|    0.181487|
+|           4|           4|   -6.089292|   -1.759276|    2.203329|    0.000210|    0.180168|
+|           4|           5|   -6.090000|   -1.827791|    2.157443|    0.000186|    0.178880|
+|           4|           6|   -6.090876|   -1.893362|    2.115751|    0.000219|    0.177622|
+|           4|           7|   -6.091926|   -1.956116|    2.077873|    0.000266|    0.176394|
+|           4|           8|   -6.094143|   -2.016176|    2.043387|    0.000308|    0.175194|
+|           4|           9|   -6.098001|   -2.073655|    2.011886|    0.000337|    0.174021|
+Updating boundary conditions.
++------------------------------------------------------------------------------------------+
+|   Time_Iter|  Inner_Iter|    rms[Rho]|      rms[k]|      rms[w]|          CL|          CD|
++------------------------------------------------------------------------------------------+
+|           5|           0|   -6.087416|   -1.614167|    2.264215|    0.000771|    0.172980|
+|           5|           1|   -6.060604|   -1.689941|    2.203612|    0.000880|    0.171927|
+|           5|           2|   -6.033734|   -1.762454|    2.148002|    0.000709|    0.170877|
+|           5|           3|   -6.023517|   -1.831852|    2.096817|    0.000490|    0.169830|
+|           5|           4|   -6.022231|   -1.898267|    2.049974|    0.000361|    0.168794|
+|           5|           5|   -6.023790|   -1.961823|    2.007390|    0.000332|    0.167778|
+|           5|           6|   -6.025509|   -2.022640|    1.968794|    0.000360|    0.166785|
+|           5|           7|   -6.027411|   -2.080831|    1.933777|    0.000403|    0.165815|
+|           5|           8|   -6.030266|   -2.136505|    1.901895|    0.000440|    0.164864|
+|           5|           9|   -6.034437|   -2.189772|    1.872732|    0.000464|    0.163931|
++-----------------------------------------------------------------------+
+|        File Writing Summary       |              Filename             |
++-----------------------------------------------------------------------+
+|SU2 binary restart                 |restart_flow_00005.dat             |
++-----------------------------------------------------------------------+
+Updating boundary conditions.
++------------------------------------------------------------------------------------------+
+|   Time_Iter|  Inner_Iter|    rms[Rho]|      rms[k]|      rms[w]|          CL|          CD|
++------------------------------------------------------------------------------------------+
+|           6|           0|   -6.035263|   -1.750166|    2.130250|    0.000879|    0.163110|
+|           6|           1|   -6.004911|   -1.821249|    2.073090|    0.000985|    0.162273|
+|           6|           2|   -5.981551|   -1.889292|    2.020448|    0.000816|    0.161433|
+|           6|           3|   -5.973395|   -1.954417|    1.971733|    0.000600|    0.160591|
+|           6|           4|   -5.973158|   -2.016736|    1.926922|    0.000471|    0.159752|
+|           6|           5|   -5.975453|   -2.076361|    1.886006|    0.000441|    0.158926|
+|           6|           6|   -5.977869|   -2.133398|    1.848777|    0.000466|    0.158116|
+|           6|           7|   -5.980359|   -2.187954|    1.814875|    0.000506|    0.157323|
+|           6|           8|   -5.983641|   -2.240131|    1.783904|    0.000539|    0.156543|
+|           6|           9|   -5.988151|   -2.290032|    1.755498|    0.000562|    0.155777|
++-----------------------------------------------------------------------+
+|        File Writing Summary       |              Filename             |
++-----------------------------------------------------------------------+
+|SU2 binary restart                 |restart_flow_00006.dat             |
+|Paraview                           |flow_00006.vtu                     |
+|Paraview surface                   |surface_flow_00006.vtu             |
++-----------------------------------------------------------------------+
+Updating boundary conditions.
++------------------------------------------------------------------------------------------+
+|   Time_Iter|  Inner_Iter|    rms[Rho]|      rms[k]|      rms[w]|          CL|          CD|
++------------------------------------------------------------------------------------------+
+|           7|           0|   -5.992274|   -1.866451|    2.015866|    0.000957|    0.155102|
+|           7|           1|   -5.963362|   -1.933863|    1.961620|    0.001055|    0.154412|
+|           7|           2|   -5.943121|   -1.998389|    1.911506|    0.000884|    0.153719|
+|           7|           3|   -5.936641|   -2.060133|    1.864806|    0.000669|    0.153020|
+|           7|           4|   -5.937212|   -2.119199|    1.821566|    0.000540|    0.152322|
+|           7|           5|   -5.940040|   -2.175686|    1.781899|    0.000508|    0.151633|
+|           7|           6|   -5.942993|   -2.229698|    1.745686|    0.000532|    0.150956|
+|           7|           7|   -5.946023|   -2.281333|    1.712626|    0.000570|    0.150291|
+|           7|           8|   -5.949758|   -2.330693|    1.682369|    0.000603|    0.149637|
+|           7|           9|   -5.954593|   -2.377878|    1.654590|    0.000625|    0.148992|
+Updating boundary conditions.
++------------------------------------------------------------------------------------------+
+|   Time_Iter|  Inner_Iter|    rms[Rho]|      rms[k]|      rms[w]|          CL|          CD|
++------------------------------------------------------------------------------------------+
+|           8|           0|   -5.959289|   -1.967844|    1.916531|    0.000993|    0.148421|
+|           8|           1|   -5.932413|   -2.032333|    1.865209|    0.001078|    0.147838|
+|           8|           2|   -5.914382|   -2.094036|    1.817716|    0.000906|    0.147253|
+|           8|           3|   -5.909033|   -2.153051|    1.773103|    0.000691|    0.146663|
+|           8|           4|   -5.910068|   -2.209473|    1.731498|    0.000563|    0.146071|
+|           8|           5|   -5.913108|   -2.263401|    1.693170|    0.000532|    0.145485|
+|           8|           6|   -5.916231|   -2.314932|    1.658100|    0.000556|    0.144910|
+|           8|           7|   -5.919392|   -2.364167|    1.626036|    0.000594|    0.144344|
+|           8|           8|   -5.923189|   -2.411203|    1.596655|    0.000626|    0.143786|
+|           8|           9|   -5.928025|   -2.456142|    1.569664|    0.000647|    0.143235|
++-----------------------------------------------------------------------+
+|        File Writing Summary       |              Filename             |
++-----------------------------------------------------------------------+
+|SU2 binary restart                 |restart_flow_00008.dat             |
++-----------------------------------------------------------------------+
+Updating boundary conditions.
++------------------------------------------------------------------------------------------+
+|   Time_Iter|  Inner_Iter|    rms[Rho]|      rms[k]|      rms[w]|          CL|          CD|
++------------------------------------------------------------------------------------------+
+|           9|           0|   -5.932311|   -2.057899|    1.829740|    0.000987|    0.142740|
+|           9|           1|   -5.907283|   -2.119994|    1.781662|    0.001064|    0.142239|
+|           9|           2|   -5.890905|   -2.179369|    1.737151|    0.000890|    0.141738|
+|           9|           3|   -5.886344|   -2.236116|    1.694910|    0.000678|    0.141233|
+|           9|           4|   -5.887684|   -2.290331|    1.655158|    0.000553|    0.140725|
+|           9|           5|   -5.890856|   -2.342111|    1.618348|    0.000525|    0.140221|
+|           9|           6|   -5.894094|   -2.391554|    1.584572|    0.000550|    0.139726|
+|           9|           7|   -5.897378|   -2.438760|    1.553620|    0.000588|    0.139239|
+|           9|           8|   -5.901278|   -2.483829|    1.525197|    0.000619|    0.138757|
+|           9|           9|   -5.906173|   -2.526861|    1.499036|    0.000639|    0.138282|
+
+----------------------------- Solver Exit -------------------------------
+Maximum number of time iterations reached (TIME_ITER = 10).
+-------------------------------------------------------------------------
++-----------------------------------------------------------------------+
+|        File Writing Summary       |              Filename             |
++-----------------------------------------------------------------------+
+|SU2 binary restart                 |restart_flow_00009.dat             |
+|Paraview                           |flow_00009.vtu                     |
+|Paraview surface                   |surface_flow_00009.vtu             |
++-----------------------------------------------------------------------+

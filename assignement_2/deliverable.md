@@ -24,3 +24,13 @@ The final velocity field is visualized in the following figure. Here, we can app
 
 ![Final velocity field](velocity_field.png)
 
+We compare the obtained velocity profile with the experimental measurements of Schefer. First, we look at the stream-wise velocity profile along the jet axis. Our numerical results (solid pink line) show a qualitative agreement with the experimental data by Schefer (blue dots). Anyway, a longer potential core is predicted in our simulation, as the velocity profile decays later along the axis than in the experimental measurements.
+
+![Axial velocity along the jet axis.](axial_velocity_decay.png)
+
+We then look at the radial profile of the axial velocity at the $x/D=4$ location. Again, there is qualitative agreement between our result and the data of Schefer. Anyway, our numerical simulation maintains a higher centerline velocity before decaying in a similar way. 
+
+![Radial velocity along the jet radius, measured at the x/D=4 axial coordinate.](axial_radial_velocity_decay.png)
+
+Both discrepancies highlight an inconsistency between our simulation and the experimental measurements. 
+Having considered a single-fluid configuration in our numerical simulation has probably introduced an important approximation with regards to the measurements of Schefer, where a propane-jet was mixing in ambient air. Given the different molecular weight of these two gases, the mixing regime is more important in the experiment, thus the jet decays more importantly, whereas in the numerical simulation this is not observed. It would be straightforward to extend the configuration file to include the two difference species and produce more consistent results. A similar configuration file is already available within the SU2 test-case, therefore we found it more interesting within the scope of this assignment to deliver a simpler and novel test-case.

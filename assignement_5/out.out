@@ -1,0 +1,410 @@
+-------------------------------------------------------------------------
+|    ___ _   _ ___                                                      |
+|   / __| | | |_  )   Release 8.4.0 "Harrier"                           |
+|   \__ \ |_| |/ /                                                      |
+|   |___/\___//___|   Suite (Computational Fluid Dynamics Code)         |
+|                                                                       |
+-------------------------------------------------------------------------
+| SU2 Project Website: https://su2code.github.io                        |
+|                                                                       |
+| The SU2 Project is maintained by the SU2 Foundation                   |
+| (http://su2foundation.org)                                            |
+-------------------------------------------------------------------------
+| Copyright 2012-2026, SU2 Contributors                                 |
+|                                                                       |
+| SU2 is free software; you can redistribute it and/or                  |
+| modify it under the terms of the GNU Lesser General Public            |
+| License as published by the Free Software Foundation; either          |
+| version 2.1 of the License, or (at your option) any later version.    |
+|                                                                       |
+| SU2 is distributed in the hope that it will be useful,                |
+| but WITHOUT ANY WARRANTY; without even the implied warranty of        |
+| MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU      |
+| Lesser General Public License for more details.                       |
+|                                                                       |
+| You should have received a copy of the GNU Lesser General Public      |
+| License along with SU2. If not, see <http://www.gnu.org/licenses/>.   |
+-------------------------------------------------------------------------
+
+Parsing config file for zone 0
+
+----------------- Physical Case Definition ( Zone 0 ) -------------------
+Incompressible RANS equations.
+Turbulence model: Menter's k-omega SST-2003m with no production modification
+using default hard coded lower limit clipping.
+Hybrid RANS/LES: No Hybrid RANS/LES
+No restart solution, use the values at infinity (freestream).
+Dimensional simulation.
+The reference area is 1 m^2.
+The semi-span will be computed using the max y(3D) value.
+The reference length is 1 m.
+Surface(s) to be analyzed in detail: inlet_gas, inlet_air, outlet.
+Input mesh file name: axisymmetric_steady_jet.su2
+
+--------------- Space Numerical Integration ( Zone 0 ) ------------------
+Flux difference splitting (FDS) upwind scheme for the flow inviscid terms.
+First order integration in space.
+Average of gradients with correction (viscous flow terms).
+Average of gradients with correction (viscous turbulence terms).
+Gradient for upwind reconstruction: inverse-distance weighted Least-Squares.
+Gradient for viscous and source terms: inverse-distance weighted Least-Squares.
+
+--------------- Time Numerical Integration  ( Zone 0 ) ------------------
+Local time stepping (steady state simulation).
+Euler implicit method for the flow equations.
+FGMRES is used for solving the linear system.
+Using a ILU(0) preconditioning.
+Convergence criteria of the linear solver: 1e-05.
+Max number of linear iterations: 5.
+No CFL adaptation.
+Courant-Friedrichs-Lewy number:      200
+Euler implicit time integration for the turbulence model.
+
+------------------ Convergence Criteria  ( Zone 0 ) ---------------------
+Maximum number of solver subiterations: 9999.
+Begin convergence monitoring at iteration 5.
+Residual minimum value: 1e-14.
+Cauchy series min. value: 1e-06.
+Number of Cauchy elements: 100.
+Begin windowed time average at iteration 0.
+
+-------------------- Output Information ( Zone 0 ) ----------------------
+File writing frequency: 
++------------------------------------+
+|                     File| Frequency|
++------------------------------------+
+|            RESTART_ASCII|       100|
+|      PARAVIEW_MULTIBLOCK|       100|
+|                 PARAVIEW|       100|
++------------------------------------+
+Writing the convergence history file every 1 inner iterations.
+Writing the screen convergence history every 10 inner iterations.
+The tabular file format is CSV (.csv).
+Convergence history file name: history.
+Forces breakdown file name: forces_breakdown.dat.
+Surface file name: surface.
+Volume file name: vol_solution.
+Restart file name: restart.
+
+------------- Config File Boundary Information ( Zone 0 ) ---------------
++-----------------------------------------------------------------------+
+|                        Marker Type|                        Marker Name|
++-----------------------------------------------------------------------+
+|                         Euler wall|                           farfield|
++-----------------------------------------------------------------------+
+|                     Symmetry plane|                               axis|
++-----------------------------------------------------------------------+
+|                     Inlet boundary|                          inlet_gas|
+|                                   |                          inlet_air|
++-----------------------------------------------------------------------+
+|                    Outlet boundary|                             outlet|
++-----------------------------------------------------------------------+
+|                     Heat flux wall|                               wall|
++-----------------------------------------------------------------------+
+
+-------------------- Output Preprocessing ( Zone 0 ) --------------------
+  Info: Ignoring the following screen output fields:
+  LINSOL_ITER_SPECIES, LINSOL_RESIDUAL_SPECIES, SURFACE_SPECIES_VARIANCE
+Screen output fields: INNER_ITER, WALL_TIME, RMS_PRESSURE, RMS_VELOCITY-X, RMS_VELOCITY-Y, RMS_ENTHALPY, RMS_TKE, RMS_DISSIPATION, LINSOL_ITER, LINSOL_RESIDUAL, LINSOL_ITER_TURB, LINSOL_RESIDUAL_TURB, SURFACE_TOTAL_PRESSURE, a_avg
+  Info: Ignoring the following history output groups:
+  SPECIES_COEFF, SPECIES_COEFF_SURF
+History output group(s): ITER, RMS_RES, LINSOL, SURFACE_TOTAL_PRESSURE
+Ignoring Convergence Field(s): RMS_SPECIES 
+Convergence field(s): RMS_PRESSURE, RMS_VELOCITY-X, RMS_VELOCITY-Y, RMS_TKE
+Warning: No (valid) fields chosen for time convergence monitoring. Time convergence monitoring inactive.
+Volume output fields: RESIDUAL, PRIMITIVE, SOUND_SPEED, COORDINATES, SOLUTION
+
+------------------- Geometry Preprocessing ( Zone 0 ) -------------------
+Two dimensional problem.
+7761 grid points.
+7524 volume elements.
+6 surface markers.
+198 boundary elements in index 0 (Marker = axis).
+38 boundary elements in index 1 (Marker = outlet).
+198 boundary elements in index 2 (Marker = farfield).
+19 boundary elements in index 3 (Marker = inlet_air).
+19 boundary elements in index 4 (Marker = inlet_gas).
+24 boundary elements in index 5 (Marker = wall).
+7524 quadrilaterals.
+Setting point connectivity.
+Renumbering points (Reverse Cuthill McKee Ordering).
+Recomputing point connectivity.
+Setting element connectivity.
+Checking the numerical grid orientation.
+There has been a re-orientation of 6612 QUADRILATERAL volume elements.
+There has been a re-orientation of 24 LINE surface elements.
+Identifying edges and vertices.
+Setting the control volume structure.
+Area of the computational grid: 0.015.
+Searching for the closest normal neighbors to the surfaces.
+Storing a mapping from global to local point index.
+Compute the surface curvature.
+Max K: 2949.23. Mean K: 22.5731. Standard deviation K: 210.979.
+Checking for periodicity.
+Computing mesh quality statistics for the dual control volumes.
++--------------------------------------------------------------+
+|           Mesh Quality Metric|        Minimum|        Maximum|
++--------------------------------------------------------------+
+|    Orthogonality Angle (deg.)|             90|             90|
+|     CV Face Area Aspect Ratio|        1.04662|        12.4483|
+|           CV Sub-Volume Ratio|              1|        23.5862|
++--------------------------------------------------------------+
+Finding max control volume width.
+Wetted area = 0 m^2.
+Area projection in the x-plane = 0 m, y-plane = 0 m.
+Max. coordinate in the x-direction = -1e+10 m, y-direction = -1e+10 m.
+Min. coordinate in the x-direction = 1e+10 m, y-direction = 1e+10 m.
+Computing wall distances.
+
+-------------------- Solver Preprocessing ( Zone 0 ) --------------------
+Incompressible flow: rho_ref, vel_ref, temp_ref, p_ref
+are set to 1.0 in order to perform a dimensional calculation.
+Force coefficients computed using initial values.
+The reference area for force coeffs. is 1 m^2.
+The reference length for force coeffs. is 1 m.
+The pressure is decomposed into thermodynamic and dynamic components.
+The initial value of the dynamic pressure is 0.
+Mach number: 0.152782, computed using the Bulk modulus.
+For external flows, the initial state is imposed at the far-field.
+Angle of attack (deg): 0, computed using the initial velocity.
+Side slip angle (deg): 0, computed using the initial velocity.
+Reynolds number per meter: 3.64452e+06, computed using initial values.
+Reynolds number is a byproduct of inputs only (not used internally).
+SI units only. The grid should be dimensional (meters).
+Energy equation is active and decoupled.
+
+-- Models:
++------------------------------------------------------------------------------+
+|          Viscosity Model|        Conductivity Model|              Fluid Model|
++------------------------------------------------------------------------------+
+|       CONSTANT_VISCOSITY|          CONSTANT_PRANDTL|         CONSTANT_DENSITY|
++------------------------------------------------------------------------------+
+-- Fluid properties:
++------------------------------------------------------------------------------+
+|                  Name|    Dim. value|    Ref. value|      Unit|Non-dim. value|
++------------------------------------------------------------------------------+
+|             Viscosity|     1.716e-05|             1|   N.s/m^2|     1.716e-05|
++------------------------------------------------------------------------------+
+|        Prandtl (Lam.)|             -|             -|         -|          0.72|
+|       Prandtl (Turb.)|             -|             -|         -|           0.9|
++------------------------------------------------------------------------------+
+|       Spec. Heat (Cp)|        1004.7|             1|  N.m/kg.K|        1004.7|
+|          Bulk Modulus|        142000|             1|        Pa|        142000|
++------------------------------------------------------------------------------+
+-- Initial and free-stream conditions:
++------------------------------------------------------------------------------+
+|                  Name|    Dim. value|    Ref. value|      Unit|Non-dim. value|
++------------------------------------------------------------------------------+
+|      Dynamic Pressure|             0|             1|        Pa|             0|
+|        Total Pressure|       1657.31|             1|        Pa|       1657.31|
+|               Density|          1.18|             1|    kg/m^3|          1.18|
+|           Temperature|           294|             1|         K|           294|
+|            Velocity-X|            53|             1|       m/s|            53|
+|            Velocity-Y|             0|             1|       m/s|             0|
+|    Velocity Magnitude|            53|             1|       m/s|            53|
++------------------------------------------------------------------------------+
+|             Viscosity|     1.716e-05|             1|   N.s/m^2|     1.716e-05|
+|          Conductivity|             -|             1|   W/m^2.K|             -|
+|     Turb. Kin. Energy|       10.5338|             1|   m^2/s^2|       10.5338|
+|     Spec. Dissipation|       72434.9|             1|       1/s|       72434.9|
++------------------------------------------------------------------------------+
+|           Mach Number|             -|             -|         -|      0.152782|
+|       Reynolds Number|             -|             -|         -|   3.64452e+06|
++------------------------------------------------------------------------------+
+Initialize Jacobian structure (Navier-Stokes). MG level: 0.
+Initialize Jacobian structure (SST model).
+
+------------------- Numerics Preprocessing ( Zone 0 ) -------------------
+
+----------------- Integration Preprocessing ( Zone 0 ) ------------------
+
+------------------- Iteration Preprocessing ( Zone 0 ) ------------------
+Euler/Navier-Stokes/RANS fluid iteration.
+
+------------------------------ Begin Solver -----------------------------
+
+Simulation Run using the Single-zone Driver
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|  Inner_Iter|   Time(sec)|      rms[P]|      rms[U]|      rms[V]|      rms[h]|      rms[k]|      rms[w]|  LinSolIter|   LinSolRes|LinSolIterTu|LinSolResTur|Avg_TotalPre|Avg_TotalPre|Avg_TotalPre|Avg_TotalPre|       a_avg|
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|           0|  4.2399e-02|   -2.417021|   -0.275832|  -16.648487|    2.222897|   -0.683950|    3.118004|           5|   -2.728270|           3|   -5.295854|  8.5290e+02|  1.2477e+03| -1.8240e+03|  1.4292e+03|  1.5274e+04|
+|          10|  4.1733e-02|   -3.156562|   -1.101965|   -2.089024|    1.456416|   -1.678766|    1.366047|           5|   -1.456964|           5|   -4.697643| -4.4230e+02|  1.7257e+02| -5.6029e+02| -5.4573e+01|  1.1374e+04|
+|          20|  4.1631e-02|   -3.504575|   -1.443372|   -2.596265|    1.227925|   -1.870512|    0.950344|           5|   -1.259938|           5|   -4.200358|  4.8634e+03|  3.1877e+03|  1.1680e+03|  5.0769e+02|  1.4498e+04|
+|          30|  4.2250e-02|   -3.757820|   -1.669186|   -3.045012|    1.016775|   -1.817656|    0.759674|           5|   -1.555701|           5|   -3.813350| -5.6161e+02|  5.3572e+02| -8.5162e+02| -2.4571e+02|  1.3383e+04|
+|          40|  4.2734e-02|   -3.986807|   -1.949228|   -3.147280|    0.925750|   -1.882463|    0.684354|           5|   -1.580020|           5|   -3.433981|  3.0993e+03|  2.2517e+03|  6.0237e+02|  2.4529e+02|  1.2091e+04|
+|          50|  4.2675e-02|   -4.292457|   -2.228931|   -3.253957|    0.523371|   -2.333339|    0.196238|           5|   -1.291170|           5|   -3.477693|  9.1249e+02|  1.2578e+03| -2.9983e+02| -4.5431e+01|  1.2382e+04|
+|          60|  4.2775e-02|   -4.484498|   -2.442155|   -3.552520|    0.280542|   -2.577949|   -0.073353|           5|   -1.228364|           5|   -3.546152|  2.1101e+03|  1.7839e+03|  2.1630e+02|  1.0993e+02|  1.1760e+04|
+|          70|  4.2810e-02|   -4.723394|   -2.680766|   -3.720191|    0.048049|   -2.897629|   -0.403834|           5|   -1.128549|           5|   -3.485071|  1.5279e+03|  1.5394e+03| -4.6486e+01|  3.5011e+01|  1.2048e+04|
+|          80|  4.3247e-02|   -4.951298|   -2.918379|   -4.034751|   -0.205364|   -3.185569|   -0.734064|           5|   -1.112904|           5|   -3.472070|  1.7728e+03|  1.6355e+03|  7.1902e+01|  6.5468e+01|  1.1810e+04|
+|          90|  4.3048e-02|   -5.185207|   -3.150318|   -4.264832|   -0.422887|   -3.444148|   -0.999318|           5|   -1.161056|           5|   -3.497610|  1.6998e+03|  1.6123e+03|  3.0741e+01|  5.6716e+01|  1.1946e+04|
+|         100|  4.2894e-02|   -5.459355|   -3.422164|   -4.643456|   -0.680220|   -3.690041|   -1.205322|           5|   -1.184029|           5|   -3.531270|  1.7001e+03|  1.6067e+03|  3.7247e+01|  5.6101e+01|  1.1867e+04|
++-----------------------------------------------------------------------+
+|        File Writing Summary       |              Filename             |
++-----------------------------------------------------------------------+
+|SU2 ASCII restart                  |restart.csv                        |
+|                                   |                     (33.6128 MB/s)|
+|Paraview Multiblock                |vol_solution.vtm                   |
+|                                   |                     (523.946 MB/s)|
+|Paraview                           |vol_solution.vtu                   |
+|                                   |                     (1802.43 MB/s)|
++-----------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|  Inner_Iter|   Time(sec)|      rms[P]|      rms[U]|      rms[V]|      rms[h]|      rms[k]|      rms[w]|  LinSolIter|   LinSolRes|LinSolIterTu|LinSolResTur|Avg_TotalPre|Avg_TotalPre|Avg_TotalPre|Avg_TotalPre|       a_avg|
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|         110|  4.3382e-02|   -5.754555|   -3.712117|   -5.033922|   -1.006681|   -3.900673|   -1.365158|           5|   -1.267137|           5|   -3.568252|  1.7220e+03|  1.6195e+03|  4.3226e+01|  5.9270e+01|  1.1906e+04|
+|         120|  4.3222e-02|   -6.065836|   -4.009581|   -5.184762|   -1.247403|   -4.131227|   -1.565629|           5|   -1.430337|           5|   -3.561277|  1.6987e+03|  1.6078e+03|  3.4865e+01|  5.6056e+01|  1.1890e+04|
+|         130|  4.3085e-02|   -6.336993|   -4.275285|   -5.480778|   -1.534355|   -4.385691|   -1.798857|           5|   -1.384894|           5|   -3.565329|  1.7156e+03|  1.6158e+03|  4.1514e+01|  5.8321e+01|  1.1895e+04|
+|         140|  4.2985e-02|   -6.594476|   -4.530983|   -5.588999|   -1.791998|   -4.648189|   -2.049134|           5|   -1.269226|           5|   -3.566082|  1.7053e+03|  1.6111e+03|  3.7200e+01|  5.6958e+01|  1.1895e+04|
+|         150|  4.2882e-02|   -6.806028|   -4.758347|   -5.840998|   -1.881627|   -4.923334|   -2.336622|           5|   -1.314858|           5|   -3.561118|  1.7108e+03|  1.6135e+03|  3.9636e+01|  5.7678e+01|  1.1893e+04|
+|         160|  4.2795e-02|   -7.024350|   -4.986791|   -6.043270|   -2.221799|   -5.218083|   -2.646860|           5|   -1.162816|           5|   -3.559968|  1.7083e+03|  1.6125e+03|  3.8453e+01|  5.7352e+01|  1.1895e+04|
+|         170|  4.2718e-02|   -7.246545|   -5.213452|   -6.344026|   -2.202426|   -5.457174|   -2.972789|           5|   -1.415847|           5|   -3.546095|  1.7092e+03|  1.6128e+03|  3.8934e+01|  5.7467e+01|  1.1894e+04|
+|         180|  4.2652e-02|   -7.508194|   -5.476435|   -6.654816|   -2.516413|   -5.724078|   -3.260447|           5|   -1.397521|           5|   -3.544135|  1.7090e+03|  1.6128e+03|  3.8803e+01|  5.7448e+01|  1.1894e+04|
+|         190|  4.2585e-02|   -7.800256|   -5.762328|   -7.031364|   -2.540900|   -5.925995|   -3.482483|           5|   -1.749717|           5|   -3.518167|  1.7089e+03|  1.6127e+03|  3.8786e+01|  5.7431e+01|  1.1894e+04|
+|         200|  4.2530e-02|   -8.081854|   -6.036130|   -7.301575|   -2.738328|   -6.173164|   -3.698172|           5|   -1.904440|           5|   -3.497253|  1.7091e+03|  1.6128e+03|  3.8843e+01|  5.7455e+01|  1.1894e+04|
++-----------------------------------------------------------------------+
+|        File Writing Summary       |              Filename             |
++-----------------------------------------------------------------------+
+|SU2 ASCII restart                  |restart.csv                        |
+|                                   |                      (33.746 MB/s)|
+|Paraview Multiblock                |vol_solution.vtm                   |
+|                                   |                     (522.653 MB/s)|
+|Paraview                           |vol_solution.vtu                   |
+|                                   |                     (1835.76 MB/s)|
++-----------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|  Inner_Iter|   Time(sec)|      rms[P]|      rms[U]|      rms[V]|      rms[h]|      rms[k]|      rms[w]|  LinSolIter|   LinSolRes|LinSolIterTu|LinSolResTur|Avg_TotalPre|Avg_TotalPre|Avg_TotalPre|Avg_TotalPre|       a_avg|
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|         210|  4.2805e-02|   -8.395371|   -6.334529|   -7.544043|   -2.844400|   -6.414258|   -3.929171|           5|   -2.120415|           5|   -3.502132|  1.7090e+03|  1.6127e+03|  3.8790e+01|  5.7436e+01|  1.1894e+04|
+|         220|  4.2748e-02|   -8.621914|   -6.564655|   -7.630217|   -2.962351|   -6.667294|   -4.170565|           5|   -2.153390|           5|   -3.493373|  1.7091e+03|  1.6128e+03|  3.8828e+01|  5.7448e+01|  1.1894e+04|
+|         230|  4.2695e-02|   -8.858254|   -6.808514|   -7.852216|   -3.107879|   -6.969293|   -4.496863|           5|   -2.224175|           5|   -3.477871|  1.7090e+03|  1.6128e+03|  3.8806e+01|  5.7441e+01|  1.1894e+04|
+|         240|  4.2651e-02|   -9.055834|   -7.016457|   -8.082777|   -3.205089|   -7.239760|   -4.819200|           5|   -2.216337|           5|   -3.432745|  1.7090e+03|  1.6128e+03|  3.8817e+01|  5.7445e+01|  1.1894e+04|
+|         250|  4.2605e-02|   -9.300742|   -7.272741|   -8.403649|   -3.353353|   -7.561058|   -5.223724|           5|   -2.320746|           5|   -3.354826|  1.7090e+03|  1.6128e+03|  3.8812e+01|  5.7443e+01|  1.1894e+04|
+|         260|  4.2561e-02|   -9.537824|   -7.505825|   -8.678325|   -3.457819|   -7.798552|   -5.504745|           5|   -2.404083|           5|   -3.337486|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+|         270|  4.2524e-02|   -9.813997|   -7.781910|   -8.980142|   -3.594589|   -8.034577|   -5.658576|           5|   -2.535933|           5|   -3.405860|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+|         280|  4.2488e-02|  -10.101197|   -8.059157|   -9.041419|   -3.710421|   -8.244178|   -5.784180|           5|   -2.621798|           5|   -3.448570|  1.7090e+03|  1.6128e+03|  3.8813e+01|  5.7443e+01|  1.1894e+04|
+|         290|  4.2457e-02|  -10.390485|   -8.341236|   -9.248079|   -3.836995|   -8.461377|   -5.972672|           5|   -2.808887|           5|   -3.462651|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+|         300|  4.2426e-02|  -10.642753|   -8.585071|   -9.437666|   -3.959959|   -8.703188|   -6.193708|           5|   -2.655001|           5|   -3.483075|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
++-----------------------------------------------------------------------+
+|        File Writing Summary       |              Filename             |
++-----------------------------------------------------------------------+
+|SU2 ASCII restart                  |restart.csv                        |
+|                                   |                     (33.7216 MB/s)|
+|Paraview Multiblock                |vol_solution.vtm                   |
+|                                   |                     (531.432 MB/s)|
+|Paraview                           |vol_solution.vtu                   |
+|                                   |                     (1845.06 MB/s)|
++-----------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|  Inner_Iter|   Time(sec)|      rms[P]|      rms[U]|      rms[V]|      rms[h]|      rms[k]|      rms[w]|  LinSolIter|   LinSolRes|LinSolIterTu|LinSolResTur|Avg_TotalPre|Avg_TotalPre|Avg_TotalPre|Avg_TotalPre|       a_avg|
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|         310|  4.2618e-02|  -10.893107|   -8.841262|   -9.611843|   -4.082001|   -8.957715|   -6.460337|           5|   -2.793700|           5|   -3.468064|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+|         320|  4.2588e-02|  -11.090543|   -9.045969|   -9.846705|   -4.207273|   -9.224499|   -6.755940|           5|   -2.691127|           5|   -3.455793|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+|         330|  4.2569e-02|  -11.319194|   -9.280312|  -10.109953|   -4.328537|   -9.515492|   -7.088818|           5|   -2.804429|           5|   -3.401119|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+|         340|  4.2542e-02|  -11.540073|   -9.506450|  -10.432724|   -4.453677|   -9.763264|   -7.428558|           5|   -2.758550|           5|   -3.349733|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+|         350|  4.2514e-02|  -11.785669|   -9.752876|  -10.770835|   -4.575576|  -10.043739|   -7.718830|           5|   -2.820811|           5|   -3.323665|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+|         360|  4.2485e-02|  -12.046692|  -10.013929|  -11.068897|   -4.699903|  -10.244152|   -7.895753|           5|   -2.809834|           5|   -3.373781|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+|         370|  4.2461e-02|  -12.315351|  -10.279271|  -11.217306|   -4.822604|  -10.476664|   -8.045726|           5|   -2.817236|           5|   -3.403344|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+|         380|  4.2435e-02|  -12.597088|  -10.554362|  -11.353449|   -4.946247|  -10.684042|   -8.216199|           5|   -2.826745|           5|   -3.427084|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+|         390|  4.2410e-02|  -12.854366|  -10.806612|  -11.514811|   -5.069467|  -10.915540|   -8.419030|           5|   -2.812633|           5|   -3.441433|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+|         400|  4.2386e-02|  -13.106690|  -11.055226|  -11.716846|   -5.192753|  -11.162675|   -8.657134|           5|   -2.828060|           5|   -3.447617|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
++-----------------------------------------------------------------------+
+|        File Writing Summary       |              Filename             |
++-----------------------------------------------------------------------+
+|SU2 ASCII restart                  |restart.csv                        |
+|                                   |                     (33.6749 MB/s)|
+|Paraview Multiblock                |vol_solution.vtm                   |
+|                                   |                     (536.975 MB/s)|
+|Paraview                           |vol_solution.vtu                   |
+|                                   |                     (1841.95 MB/s)|
++-----------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|  Inner_Iter|   Time(sec)|      rms[P]|      rms[U]|      rms[V]|      rms[h]|      rms[k]|      rms[w]|  LinSolIter|   LinSolRes|LinSolIterTu|LinSolResTur|Avg_TotalPre|Avg_TotalPre|Avg_TotalPre|Avg_TotalPre|       a_avg|
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|         410|  4.2534e-02|  -13.317909|  -11.270553|  -11.957904|   -5.316184|  -11.422854|   -8.927258|           5|   -2.814015|           5|   -3.445206|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+|         420|  4.2510e-02|  -13.537972|  -11.495241|  -12.226268|   -5.439367|  -11.707287|   -9.234004|           5|   -2.825611|           5|   -3.421670|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+|         430|  4.2489e-02|  -13.750970|  -11.713860|  -12.547214|   -5.562823|  -11.987830|   -9.571637|           5|   -2.817505|           5|   -3.369964|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+|         440|  4.2468e-02|  -13.985126|  -11.951444|  -12.884823|   -5.686030|  -12.267717|   -9.913650|           5|   -2.823003|           5|   -3.310041|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+|         450|  4.2445e-02|  -14.232219|  -12.199891|  -13.249905|   -5.809437|  -12.508022|  -10.169749|           5|   -2.820138|           5|   -3.316075|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+|         460|  4.2425e-02|  -14.493700|  -12.460234|  -13.492315|   -5.932699|  -12.724047|  -10.325355|           5|   -2.821323|           5|   -3.366674|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+|         470|  4.2405e-02|  -14.771677|  -12.733726|  -13.625570|   -6.056055|  -12.926853|  -10.470881|           5|   -2.821369|           5|   -3.403734|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+|         480|  4.2386e-02|  -15.039408|  -12.995550|  -13.770270|   -6.179359|  -13.137932|  -10.647265|           5|   -2.820658|           5|   -3.426566|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+|         490|  4.2367e-02|  -15.307764|  -13.257728|  -13.937687|   -6.302683|  -13.366332|  -10.858705|           5|   -2.821657|           5|   -3.440600|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+|         500|  4.2353e-02|  -15.534021|  -13.483924|  -14.156818|   -6.426008|  -13.613409|  -11.103844|           5|   -2.820625|           5|   -3.446573|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
++-----------------------------------------------------------------------+
+|        File Writing Summary       |              Filename             |
++-----------------------------------------------------------------------+
+|SU2 ASCII restart                  |restart.csv                        |
+|                                   |                      (33.738 MB/s)|
+|Paraview Multiblock                |vol_solution.vtm                   |
+|                                   |                     (532.174 MB/s)|
+|Paraview                           |vol_solution.vtu                   |
+|                                   |                     (1778.95 MB/s)|
++-----------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|  Inner_Iter|   Time(sec)|      rms[P]|      rms[U]|      rms[V]|      rms[h]|      rms[k]|      rms[w]|  LinSolIter|   LinSolRes|LinSolIterTu|LinSolResTur|Avg_TotalPre|Avg_TotalPre|Avg_TotalPre|Avg_TotalPre|       a_avg|
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|         510|  4.2469e-02|  -15.758348|  -13.711805|  -14.398649|   -6.549320|  -13.879898|  -11.383148|           5|   -2.821529|           5|   -3.440763|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+|         520|  4.2450e-02|  -15.965160|  -13.924673|  -14.690942|   -6.672651|  -14.161671|  -11.700248|           5|   -2.820821|           5|   -3.407919|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+|         522|  4.2448e-02|  -16.065961|  -14.016121|  -14.691545|   -6.697312|  -14.154292|  -11.645175|           5|   -2.820844|           5|   -3.447832|  1.7090e+03|  1.6128e+03|  3.8814e+01|  5.7444e+01|  1.1894e+04|
+
+----------------------------- Solver Exit -------------------------------
+All convergence criteria satisfied.
++-----------------------------------------------------------------------+
+|      Convergence Field     |     Value    |   Criterion  |  Converged |
++-----------------------------------------------------------------------+
+|                      rms[P]|       -16.066|         < -14|         Yes|
+|                      rms[U]|      -14.0161|         < -14|         Yes|
+|                      rms[V]|      -14.6915|         < -14|         Yes|
+|                      rms[k]|      -14.1543|         < -14|         Yes|
++-----------------------------------------------------------------------+
+-------------------------------------------------------------------------
++-----------------------------------------------------------------------+
+|        File Writing Summary       |              Filename             |
++-----------------------------------------------------------------------+
+|SU2 ASCII restart                  |restart.csv                        |
+|                                   |                     (33.6619 MB/s)|
+|Paraview Multiblock                |vol_solution.vtm                   |
+|                                   |                     (522.948 MB/s)|
+|Paraview                           |vol_solution.vtu                   |
+|                                   |                     (1829.61 MB/s)|
++-----------------------------------------------------------------------+
+
+--------------------------- Finalizing Solver ---------------------------
+Deleted CNumerics container.
+Deleted CIntegration container.
+Deleted CSolver container.
+Deleted CIteration container.
+Deleted CInterface container.
+Deleted CGeometry container.
+Deleted CFreeFormDefBox class.
+Deleted CSurfaceMovement class.
+Deleted CVolumetricMovement class.
+Deleted CConfig container.
+Deleted nInst container.
+Deleted COutput class.
+-------------------------------------------------------------------------
+
+
+-------------------------- Performance Summary --------------------------
+Simulation totals:
+   Wall-clock time (hrs):   0.0062063 |            Core-hrs:   0.0062063
+                   Cores:           1 |          DOFs/point:           6
+             Points/core:        7761 |   Ghost points/core:           0
+ Ghost/Owned Point Ratio:           0 | 
+
+Preprocessing phase:
+       Preproc. Time (s):    0.072194 |   Preproc. Time (%):    0.323121
+
+Compute phase:
+        Compute Time (s):     22.2027 |    Compute Time (%):     99.3734
+         Iteration count:         523 |         Avg. s/iter:   0.0424526
+     Core-s/iter/Mpoints:     5.46999 |           Mpoints/s:    0.182816
+
+Output phase:
+         Output Time (s):    0.067811 |     Output Time (%):    0.303504
+            Output count:           1 |       Avg. s/output:    0.067811
+-------------------------------------------------------------------------
+
+
+------------------------- Exit Success (SU2_CFD) ------------------------
+
